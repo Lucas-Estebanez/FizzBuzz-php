@@ -4,12 +4,5 @@ namespace Deg540\CleanCodeKata9;
 
 class FizzBuzz
 {
-    /**
-     * @param $value
-     *
-     * @return bool
-     */
-    function integerChecker($value): bool {
-        return is_integer($value);
-    }
+
 }
