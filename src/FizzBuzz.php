@@ -19,4 +19,8 @@ class FizzBuzz
     function isFizz($input): bool {
         return $input % 3 === 0;
     }
+
+    function isBuzz($input) {
+        return $input % 5 === 0;
+    }
 }
