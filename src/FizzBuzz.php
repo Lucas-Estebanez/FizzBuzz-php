@@ -12,7 +12,11 @@ class FizzBuzz
         return $input;
     }
 
-    function isFizz($input) {
+    /**
+     * @param $input
+     * @return bool
+     */
+    function isFizz($input): bool {
         return $input % 3 === 0;
     }
 }
