@@ -12,7 +12,7 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function returnsNumberForInput()
+    public function returnsNumberForIntegerInput()
     {
         $example = new FizzBuzz();
 
