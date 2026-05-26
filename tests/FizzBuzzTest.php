@@ -44,4 +44,28 @@ final class FizzBuzzTest extends TestCase
 
         $this->assertFalse($booleanValue);
     }
+
+    /**
+     * @test
+     */
+    public function isBuzzReturnsTrueForInputDivisibleBy5()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $booleanValue = $fizzBuzz->isBuzz(5);
+
+        $this->assertTrue($booleanValue);
+    }
+
+    /**
+     * @test
+     */
+    public function isBuzzReturnsFalseForInputNotDivisibleBy5()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $booleanValue = $fizzBuzz->isBuzz(4);
+
+        $this->assertFalse($booleanValue);
+    }
 }
