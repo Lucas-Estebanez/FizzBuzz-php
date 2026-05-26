@@ -14,10 +14,34 @@ final class FizzBuzzTest extends TestCase
      */
     public function returnsNumberStringForIntegerInput()
     {
-        $example = new FizzBuzz();
+        $fizzBuzz = new FizzBuzz();
 
-        $integerValue = $example->fizzBuzz(1);
+        $value = $fizzBuzz->fizzBuzz(1);
 
-        $this->assertIsString($integerValue);
+        $this->assertIsString($value);
+    }
+
+    /**
+     * @test
+     */
+    public function isFizzReturnsTrueForInputDivisibleBy3()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $booleanValue = $fizzBuzz->isFizz(2);
+
+        $this->assertTrue($booleanValue);
+    }
+
+    /**
+     * @test
+     */
+    public function isFizzReturnsFalseForInputNotDivisibleBy3()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $booleanValue = $fizzBuzz->isFizz(2);
+
+        $this->assertFalse($booleanValue);
     }
 }
