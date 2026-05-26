@@ -12,12 +12,12 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function returnsNumberForIntegerInput()
+    public function returnsNumberStringForIntegerInput()
     {
         $example = new FizzBuzz();
 
         $integerValue = $example->fizzBuzz(1);
 
-        $this->assertIsInt($integerValue);
+        $this->assertIsString($integerValue);
     }
 }
