@@ -28,7 +28,7 @@ final class FizzBuzzTest extends TestCase
     {
         $fizzBuzz = new FizzBuzz();
 
-        $booleanValue = $fizzBuzz->isFizz(2);
+        $booleanValue = $fizzBuzz->isFizz(3);
 
         $this->assertTrue($booleanValue);
     }
