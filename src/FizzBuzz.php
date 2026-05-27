@@ -11,7 +11,7 @@ class FizzBuzz
      */
     function printFizzBuzzList(int $max = 100, int $min = 1): void {
         for ($i = $min; $i <= $max; $i++) {
-            echo $this->fizzBuzz($i);
+            echo $this->fizzBuzz($i) . "\n";
         }
     }
 
