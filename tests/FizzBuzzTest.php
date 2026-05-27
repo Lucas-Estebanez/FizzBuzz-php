@@ -12,13 +12,25 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function returnsNumberStringForIntegerInput()
+    public function fizzBuzzReturnsNumberStringForInputNotDivisibleBy3()
     {
         $fizzBuzz = new FizzBuzz();
 
         $value = $fizzBuzz->fizzBuzz(1);
 
-        $this->assertIsString($value);
+        $this->assertEquals("1", $value);
+    }
+
+    /**
+     * @test
+     */
+    public function fizzBuzzReturnsFizzForInputDivisibleBy3()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $value = $fizzBuzz->fizzBuzz(3);
+
+        $this->assertEquals("Fizz", $value);
     }
 
     /**
