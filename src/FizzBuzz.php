@@ -9,6 +9,9 @@ class FizzBuzz
      * @return string
      */
     function fizzBuzz($input): string {
+        if ($input % 3 === 0) {
+            return "Fizz";
+        }
         return $input;
     }
 
