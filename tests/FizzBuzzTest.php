@@ -36,6 +36,18 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
+    public function fizzBuzzReturnsBuzzForInputDivisibleBy5()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $value = $fizzBuzz->fizzBuzz(5);
+
+        $this->assertEquals("Buzz", $value);
+    }
+
+    /**
+     * @test
+     */
     public function isFizzReturnsTrueForInputDivisibleBy3()
     {
         $fizzBuzz = new FizzBuzz();
