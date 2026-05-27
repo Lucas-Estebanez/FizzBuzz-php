@@ -50,6 +50,6 @@ class FizzBuzz
      * @return bool
      */
     function isBuzz($input): bool {
-        return $input % 5 === 0;
+        return $input % 5 === 0 || str_contains($input, "5");
     }
 }
