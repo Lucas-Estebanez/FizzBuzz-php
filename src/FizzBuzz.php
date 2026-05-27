@@ -42,7 +42,7 @@ class FizzBuzz
      * @return bool
      */
     function isFizz($input): bool {
-        return $input % 3 === 0;
+        return $input % 3 === 0 || str_contains($input, "3");
     }
 
     /**
