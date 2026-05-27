@@ -12,7 +12,7 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function fizzBuzzReturnsNumberStringForInputNotDivisibleBy3()
+    public function fizzBuzzReturnsNumberStringForInputNotFizzOrBuzz()
     {
         $fizzBuzz = new FizzBuzz();
 
@@ -24,12 +24,14 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function fizzBuzzReturnsFizzForInputDivisibleBy3()
+    public function fizzBuzzReturnsFizzForInputIsFizz()
     {
         $fizzBuzz = new FizzBuzz();
 
-        $value = $fizzBuzz->fizzBuzz(3);
+        $input = 3;
+        $this->assertTrue($fizzBuzz->isFizz($input));
 
+        $value = $fizzBuzz->fizzBuzz($input);
         $this->assertEquals("Fizz", $value);
     }
 
@@ -48,7 +50,7 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function fizzBuzzReturnsFizzBuzzForInputDivisibleBy3And5()
+    public function fizzBuzzReturnsFizzBuzzForInputIsFizzAndBuzz()
     {
         $fizzBuzz = new FizzBuzz();
 
@@ -64,7 +66,7 @@ final class FizzBuzzTest extends TestCase
     {
         $fizzBuzz = new FizzBuzz();
 
-        $booleanValue = $fizzBuzz->isFizz(3);
+        $booleanValue = $fizzBuzz->isFizz(27);
 
         $this->assertTrue($booleanValue);
     }
@@ -72,11 +74,23 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function isFizzReturnsFalseForInputNotDivisibleBy3()
+    public function isFizzReturnsTrueForInputContainsNumber3()
     {
         $fizzBuzz = new FizzBuzz();
 
-        $booleanValue = $fizzBuzz->isFizz(2);
+        $booleanValue = $fizzBuzz->isFizz(31);
+
+        $this->assertTrue($booleanValue);
+    }
+
+    /**
+     * @test
+     */
+    public function isFizzReturnsFalseForInputNotDivisibleBy3AndDoesntContainNumber3()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $booleanValue = $fizzBuzz->isFizz(29);
 
         $this->assertFalse($booleanValue);
     }
