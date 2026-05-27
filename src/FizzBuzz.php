@@ -5,6 +5,17 @@ namespace Deg540\CleanCodeKata9;
 class FizzBuzz
 {
     /**
+     * @param int $max
+     * @param int $min
+     * @return void
+     */
+    function printFizzBuzzList(int $max = 100, int $min = 1): void {
+        for ($i = $min; $i <= $max; $i++) {
+            echo $this->fizzBuzz($i);
+        }
+    }
+
+    /**
      * @param $input
      * @return string
      */
