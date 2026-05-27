@@ -9,6 +9,9 @@ class FizzBuzz
      * @return string
      */
     function fizzBuzz($input): string {
+        if($input % 5 == 0) {
+            return "Buzz";
+        }
         return $this->isFizz($input) ? "Fizz" : $input;
     }
 
