@@ -19,6 +19,7 @@ final class FizzBuzzTest extends TestCase
         $value = $fizzBuzz->fizzBuzz(1);
 
         $this->assertEquals("1", $value);
+        $this->assertisString($value);
     }
 
     /**
@@ -30,6 +31,7 @@ final class FizzBuzzTest extends TestCase
 
         $input = 3;
         $this->assertTrue($fizzBuzz->isFizz($input));
+        $this->assertFalse($fizzBuzz->isBuzz($input));
 
         $value = $fizzBuzz->fizzBuzz($input);
         $this->assertEquals("Fizz", $value);
@@ -38,12 +40,15 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function fizzBuzzReturnsBuzzForInputDivisibleBy5()
+    public function fizzBuzzReturnsBuzzForInputIsBuzz()
     {
         $fizzBuzz = new FizzBuzz();
 
-        $value = $fizzBuzz->fizzBuzz(5);
+        $input = 5;
+        $this->assertTrue($fizzBuzz->isBuzz($input));
+        $this->assertFalse($fizzBuzz->isFizz($input));
 
+        $value = $fizzBuzz->fizzBuzz($input);
         $this->assertEquals("Buzz", $value);
     }
 
@@ -54,8 +59,11 @@ final class FizzBuzzTest extends TestCase
     {
         $fizzBuzz = new FizzBuzz();
 
-        $value = $fizzBuzz->fizzBuzz(15);
+        $input = 15;
+        $this->assertTrue($fizzBuzz->isBuzz($input));
+        $this->assertTrue($fizzBuzz->isFizz($input));
 
+        $value = $fizzBuzz->fizzBuzz($input);
         $this->assertEquals("FizzBuzz", $value);
     }
 
@@ -110,7 +118,19 @@ final class FizzBuzzTest extends TestCase
     /**
      * @test
      */
-    public function isBuzzReturnsFalseForInputNotDivisibleBy5()
+    public function isBuzzReturnsTrueForInputContainsNumber5()
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $booleanValue = $fizzBuzz->isBuzz(52);
+
+        $this->assertTrue($booleanValue);
+    }
+
+    /**
+     * @test
+     */
+    public function isBuzzReturnsFalseForInputNotDivisibleBy5AndDoesntContainNumber5()
     {
         $fizzBuzz = new FizzBuzz();
 
