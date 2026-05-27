@@ -4,6 +4,11 @@ namespace Deg540\CleanCodeKata9;
 
 class FizzBuzz
 {
+
+    const string FIZZ = "Fizz";
+    const string BUZZ = "Buzz";
+    const string FIZZBUZZ = "FizzBuzz";
+
     /**
      * @param int $max
      * @param int $min
@@ -21,13 +26,13 @@ class FizzBuzz
      */
     function fizzBuzz($input): string {
         if($this->isFizz($input) && $this->isBuzz($input)) {
-            return "FizzBuzz";
+            return self::FIZZBUZZ;
         }
         if($this->isFizz($input)) {
-            return "Fizz";
+            return self::FIZZ;
         }
         if($this->isBuzz($input)) {
-            return "Buzz";
+            return self::BUZZ;
         }
         return $input;
     }
